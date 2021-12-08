@@ -7,22 +7,22 @@ from machinetranslation import translator
 app = Flask("Web Translator")
 
 @app.route("/englishToFrench")
-def english_to_french():
-    ''' english_to_french endpoint '''
-    text_to_translate = request.args.get('text_to_translate')
+def englishToFrench():
+    ''' english to french endpoint '''
+    textToTranslate = request.args.get('textToTranslate')
     # Write your code here
-    french_text = translator.english_to_french(text_to_translate)
+    french_text = translator.english_to_french(textToTranslate)
     # return "Translated text to French"
-    return french_text
+    return "Translated text to French : " + french_text
 
 @app.route("/frenchToEnglish")
-def french_to_english():
-    ''' french_to_english endpoint '''
-    text_to_translate = request.args.get('text_to_translate')
+def frenchToEnglish():
+    ''' french to english endpoint '''
+    textToTranslate = request.args.get('textToTranslate')
     # Write your code here
-    english_text = translator.french_to_english(text_to_translate)
+    english_text = translator.french_to_english(textToTranslate)
     # return "Translated text to English"
-    return english_text
+    return "Translated text to English : " + english_text
 
 @app.route("/")
 def render_index_page():
